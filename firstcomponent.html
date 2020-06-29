@@ -6,21 +6,24 @@
     <title>First Component</title>
     <script src="https://unpkg.com/react@16.0.0-rc.2/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16.0.0-rc.2/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/react-dom-factories@1.0.0/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 </head>
 <body>
     <div id="app"></div>
     <!-- <h1>Hello</h1> -->
-    <script type="text/javascript">
+    <script type="text/babel">
       class Pet extends React.Component{
         render (){
-            const h2 = ReactDOMFactories.h2(null, "Potter");
-            const img = ReactDOMFactories.img({src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Indian_spitz_adult.JPG/640px-Indian_spitz_adult.JPG",
-            alt:"Potter my dog"});
-            return ReactDOMFactories.div(null, h2,img);
+          return (
+          <div>
+          <h2>Potter</h2>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Indian_spitz_adult.JPG/640px-Indian_spitz_adult.JPG"
+               alt="Potter my dog" />
+          </div>
+          );
         }
       }
-     ReactDOM.render(React.createElement(Pet),document.getElementById("app"));
+     ReactDOM.render(<Pet />,document.getElementById("app"));
     </script> 
     </script>
 </body>
